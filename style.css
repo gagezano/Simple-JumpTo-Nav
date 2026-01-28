@@ -1,59 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
 :root {
-  font-family: 'Space Grotesk', 'Neue Haas Grotesk Display', system-ui, sans-serif;
+  font-family: 'SF Pro Display', 'SF Pro Text', 'SF Sans', 'Helvetica Neue', sans-serif;
   background: #000;
   color: #fff;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
 
 body {
   margin: 0;
   background: #000;
 }
 
-.back-link {
-  position: sticky;
-  top: 0;
-  background: rgba(0, 0, 0, 0.95);
-  padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  z-index: 11;
-}
-
-.back-link a {
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.3em;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.back-link__icon {
-  font-size: 1rem;
-}
-
+.back-link,
 .jump-nav {
   position: sticky;
   top: 0;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 10;
+  z-index: 11;
 }
 
+.back-link a,
+.jump-nav a,
 .jump-nav__logo {
-  background: none;
-  border: none;
-  font-size: 1.25rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
   color: #fff;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.back-link a,
+.jump-nav__logo {
+  gap: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.jump-nav {
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .jump-nav nav {
@@ -63,14 +53,10 @@ body {
 
 .jump-nav a {
   color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
 }
 
 .jump-nav a.active {
   color: rgba(255, 255, 255, 1);
-  opacity: 1;
 }
 
 main {
@@ -83,26 +69,24 @@ main {
   min-height: 80vh;
 }
 
-.section-icon {
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
-}
-
-.section-icon img {
-  width: clamp(80px, 12vw, 140px);
-  filter: invert(1);
-}
-
 .section h1 {
   margin-bottom: 0.5rem;
   font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: 0.1em;
 }
 
-.section p {
-  margin: 0;
-  max-width: 640px;
-  line-height: 1.6;
-  font-size: 1rem;
+.section-icon,
+.project-icon,
+.carousel__icon,
+.detail-card-icon {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.section-icon img,
+.project-icon img,
+.carousel__icon img,
+.detail-card-icon img {
+  width: clamp(80px, 15vw, 120px);
+  filter: invert(1);
 }
