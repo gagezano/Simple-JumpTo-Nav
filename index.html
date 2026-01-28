@@ -42,13 +42,35 @@
   </main>
 
   <script>
-    document.querySelectorAll('.jump-nav nav a').forEach(anchor => {
+    const navLinks = document.querySelectorAll('.jump-nav nav a');
+    const sections = Array.from(navLinks).map(anchor => document.querySelector(anchor.getAttribute('href')));
+
+    const setActiveLink = activeAnchor => {
+      navLinks.forEach(link => link.classList.toggle('active', link === activeAnchor));
+    };
+
+    navLinks.forEach(anchor => {
       anchor.addEventListener('click', e => {
         e.preventDefault();
         const target = document.querySelector(anchor.getAttribute('href'));
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setActiveLink(anchor);
       });
     });
+
+    const updateActiveOnScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+      let current = navLinks[0];
+      sections.forEach((section, index) => {
+        if (section && section.offsetTop <= scrollPosition) {
+          current = navLinks[index];
+        }
+      });
+      setActiveLink(current);
+    };
+
+    window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
+    updateActiveOnScroll();
   </script>
 </body>
 </html>

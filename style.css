@@ -36,10 +36,15 @@ body {
 }
 
 .jump-nav a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   font-size: 0.95rem;
   letter-spacing: 0.08em;
+}
+
+.jump-nav a.active {
+  color: rgba(255, 255, 255, 1);
+  opacity: 1;
 }
 
 main {
