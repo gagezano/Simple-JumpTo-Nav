@@ -8,8 +8,11 @@
 </head>
 <body>
   <header class="back-link">
-    <a href="../index.html">
-      <span class="back-link__icon">⟵</span>Back to SelfHovering
+    <a href="../index.html" aria-label="Back to SelfHovering">
+      <span class="back-link__arrow" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </span>
+      <img src="../sa-icon.svg" alt="" class="back-link__logo" width="32" height="28" />
     </a>
   </header>
 
@@ -26,27 +29,15 @@
   <main>
     <section id="highlights" class="section">
       <h1>Highlights</h1>
-      <div class="section-icon">
-        <img src="../sa-icon.svg" alt="SA Icon" />
-      </div>
     </section>
     <section id="features" class="section">
       <h1>Features</h1>
-      <div class="section-icon">
-        <img src="../sa-icon.svg" alt="SA Icon" />
-      </div>
     </section>
     <section id="about" class="section">
       <h1>About</h1>
-      <div class="section-icon">
-        <img src="../sa-icon.svg" alt="SA Icon" />
-      </div>
     </section>
     <section id="contact" class="section">
       <h1>Contact</h1>
-      <div class="section-icon">
-        <img src="../sa-icon.svg" alt="SA Icon" />
-      </div>
     </section>
   </main>
 
@@ -80,6 +71,13 @@
 
     window.addEventListener('scroll', updateActiveOnScroll, { passive: true });
     updateActiveOnScroll();
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft' && !e.target.matches('input, textarea, select, [contenteditable="true"]')) {
+        e.preventDefault();
+        window.location.href = '../index.html';
+      }
+    });
   </script>
 </body>
 </html>
