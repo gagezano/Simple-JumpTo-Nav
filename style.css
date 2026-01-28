@@ -83,6 +83,17 @@ main {
   min-height: 80vh;
 }
 
+.section-icon {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.section-icon img {
+  width: clamp(80px, 12vw, 140px);
+  filter: invert(1);
+}
+
 .section h1 {
   margin-bottom: 0.5rem;
   font-size: clamp(2rem, 4vw, 3rem);
