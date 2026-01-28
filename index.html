@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Jump To Nav</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="jump-nav">
+    <button class="jump-nav__logo">JumpNav</button>
+    <nav>
+      <a href="#highlights">Highlights</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="highlights" class="section">
+      <h1>Highlights</h1>
+      <p>A clean navigation that scrolls to each area with smooth timing.</p>
+    </section>
+    <section id="features" class="section">
+      <h1>Features</h1>
+      <p>Responsive layout, white text, Helvetica, and consistent spacing on mobile.</p>
+    </section>
+    <section id="about" class="section">
+      <h1>About</h1>
+      <p>The nav sticks to the top and keeps the links readable.</p>
+    </section>
+    <section id="contact" class="section">
+      <h1>Contact</h1>
+      <p>Use the nav to jump to any section.</p>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.jump-nav nav a').forEach(anchor => {
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
